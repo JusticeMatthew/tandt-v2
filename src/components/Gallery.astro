@@ -1,0 +1,30 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*');
+
+const resolvedImages = await Promise.all(
+  Object.values(images).map((image) => image().then((mod) => mod.default)),
+);
+
+resolvedImages.sort(() => Math.random() - 0.5);
+---
+
+<section
+  class="container z-20 relative p-10 backdrop-blur-lg rounded-t-md shadow bg-glass/40">
+  <h2 class="text-subtitle font-barlow mb-10">Gallery</h2>
+  <div class="sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5">
+    {
+      resolvedImages.map((image) => (
+        <Image
+          src={image}
+          alt="test"
+          quality={25}
+          loading="lazy"
+          class="rounded-md mb-4"
+        />
+      ))
+    }
+  </div>
+</section>

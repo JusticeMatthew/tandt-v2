@@ -20,13 +20,14 @@ export default {
       fontSize: {
         min: 'var(--step-00)',
         bread: 'var(--step-0)',
-        subtitle: 'var(--step-1)',
+        subtitle: 'var(--step-3)',
         title: 'var(--step-5)',
         headline: 'var(--step-6)',
       },
       colors: {
         light: '#F8FAFC',
         dark: '#0D111C',
+        glass: '#E3EFFF',
       },
     },
 	},

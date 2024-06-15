@@ -65,3 +65,11 @@ label {
   margin: 0 auto;
   padding: 0 1.5rem;
 }
+
+.balanced {
+  text-wrap: balance;
+}
+
+.pretty {
+  text-wrap: pretty;
+}

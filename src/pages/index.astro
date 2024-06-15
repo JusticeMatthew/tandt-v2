@@ -1,19 +1,12 @@
 ---
 import MainLayout from '@/layouts/MainLayout.astro';
-import { Image } from 'astro:assets';
-
-const backgrounds = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/backgrounds/*',
-);
-
-const resolvedBgs = await Promise.all(
-  Object.values(backgrounds).map((image) => image().then((mod) => mod.default)),
-);
-
-resolvedBgs.sort(() => Math.random() - 0.5);
+import Background from '@/components/Background.astro';
+import Bread from '@/components/Bread.astro';
 ---
 
 <MainLayout>
-  {resolvedBgs.map((bg) => <Image src={bg} alt="test" />)}
-  <h1>Astro</h1>
+  <Background />
+  <div class="z-20 relative container">
+    <Bread />
+  </div>
 </MainLayout>
