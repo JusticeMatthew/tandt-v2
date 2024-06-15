@@ -1,13 +1,14 @@
-<div class="bg-glass/40 max-w-fit p-10 backdrop-blur-lg rounded-b-md shadow">
+<div
+  class="bg-glass/40 max-w-fit p-10 backdrop-blur-lg rounded-b-md shadow roboto">
   <p class="font-semibold mb-3">T&T Photography</p>
-  <h1 class="font-barlow text-title font-medium mb-8">
+  <h1 class="barlow text-title font-medium mb-8">
     Capturing Nature's<br />Masterpieces
   </h1>
   <p class="max-w-[48ch] pretty mb-8">
     Get notified when we're open for commissions and explore a curated selection
     of our favorite photographs below.
   </p>
-  <form class="flex w-full gap-2">
+  <form id="signup" class="flex w-full gap-2">
     <input
       id="email"
       type="email"
@@ -22,3 +23,11 @@
     >
   </form>
 </div>
+
+<script>
+  const form = document.getElementById('signup');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+  });
+</script>

@@ -1,13 +1,48 @@
 ---
 import '@/styles/global.css';
+import { AstroFont } from 'astro-font';
 ---
 
 <html>
-  <meta charset="utf-8" />
-  <link rel="icon" href="/favicon.svg?" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="generator" content={Astro.generator} />
-  <title>T & T Photography</title>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.svg?" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>T & T Photography</title>
+    <AstroFont
+      config={[
+        {
+          name: 'Roboto',
+          src: [
+            {
+              style: 'normal',
+              weight: '400',
+              path: 'fonts/Roboto.woff2',
+            },
+          ],
+          preload: true,
+          display: 'swap',
+          selector: '.roboto',
+          fallback: 'sans-serif',
+        },
+        {
+          name: 'Barlow',
+          src: [
+            {
+              style: 'normal',
+              weight: '400',
+              path: 'fonts/Barlow.woff2',
+            },
+          ],
+          preload: true,
+          display: 'swap',
+          selector: '.barlow',
+          fallback: 'sans-serif',
+        },
+      ]}
+    />
+  </head>
 
   <body class="font-roboto">
     <main>
