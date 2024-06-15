@@ -1,0 +1,6 @@
+export {default as flowers } from './1.webp'
+export {default as deer } from './2.webp'
+export {default as sunset } from './3.webp'
+export {default as bird } from './4.webp'
+export {default as mountains } from './5.webp'
+export {default as rocks } from './6.webp'

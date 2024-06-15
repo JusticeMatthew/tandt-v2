@@ -1,5 +1,13 @@
 ---
-export const prerender = false;
+import { Image } from 'astro:assets';
+import {
+  flowers,
+  deer,
+  sunset,
+  bird,
+  mountains,
+  rocks,
+} from '@/assets/backgrounds';
 ---
 
 <style>
@@ -10,35 +18,29 @@ export const prerender = false;
     left: 0;
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center;
+    object-fit: cover;
+    object-position: center;
     animation: fade 42s infinite;
     opacity: 0;
     content-visibility: auto;
   }
 
   .background:nth-child(1) {
-    background-image: url('/images/1.webp');
     animation-delay: 0s;
   }
   .background:nth-child(2) {
-    background-image: url('/images/2.webp');
     animation-delay: 7s;
   }
   .background:nth-child(3) {
-    background-image: url('/images/3.webp');
     animation-delay: 14s;
   }
   .background:nth-child(4) {
-    background-image: url('/images/4.webp');
     animation-delay: 21s;
   }
   .background:nth-child(5) {
-    background-image: url('/images/5.webp');
     animation-delay: 28s;
   }
   .background:nth-child(6) {
-    background-image: url('/images/6.webp');
     animation-delay: 35s;
   }
 
@@ -62,10 +64,14 @@ export const prerender = false;
 </style>
 
 <>
-  <div class="background"></div>
-  <div class="background"></div>
-  <div class="background"></div>
-  <div class="background"></div>
-  <div class="background"></div>
-  <div class="background"></div>
+  <Image src={flowers} alt="purple flowers" class="background" />
+  <Image src={deer} alt="a deer head on" class="background" />
+  <Image src={sunset} alt="a low sunset over the ocean" class="background" />
+  <Image src={bird} alt="a green maccaw" class="background" />
+  <Image
+    src={mountains}
+    alt="mountains beyond an open plain with a few sparse trees"
+    class="background"
+  />
+  <Image src={rocks} alt="ice or salt covered rocks" class="background" />
 </>
