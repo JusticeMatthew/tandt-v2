@@ -15,7 +15,7 @@ export default {
       },
       fontFamily: {
         roboto: ['Roboto', ...defaultTheme.fontFamily.sans],
-        barlow: ['Barlow', ...defaultTheme.fontFamily.display],
+        barlow: ['Barlow', ...defaultTheme.fontFamily.sans],
       },
       fontSize: {
         min: 'var(--step-00)',

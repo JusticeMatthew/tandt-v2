@@ -1,16 +1,19 @@
 ---
+import MainLayout from '@/layouts/MainLayout.astro';
+import { Image } from 'astro:assets';
 
+const backgrounds = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/backgrounds/*',
+);
+
+const resolvedBgs = await Promise.all(
+  Object.values(backgrounds).map((image) => image().then((mod) => mod.default)),
+);
+
+resolvedBgs.sort(() => Math.random() - 0.5);
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout>
+  {resolvedBgs.map((bg) => <Image src={bg} alt="test" />)}
+  <h1>Astro</h1>
+</MainLayout>
