@@ -39,6 +39,9 @@
 
       /* Section Gap */
   --space-section: clamp(10rem, 7.5327rem + 11.9626vi, 18rem);
+
+  /* Gallery Padding*/
+  --space-gallery: clamp(1.5rem, -18.3333rem + 22.6667vi, 10rem);
 }
 
 body {
@@ -64,6 +67,11 @@ label {
   max-width: clamp(16rem, 100%, 90rem);
   margin: 0 auto;
   padding: 0 1.5rem;
+}
+
+#gallery-container {
+  padding-left: var(--space-gallery);
+  padding-right: var(--space-gallery);
 }
 
 .balanced {

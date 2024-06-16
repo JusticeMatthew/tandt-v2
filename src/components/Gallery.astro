@@ -12,20 +12,25 @@ resolvedImages.sort(() => Math.random() - 0.5);
 ---
 
 <section
-  id="gallery"
-  class="container z-20 relative p-10 backdrop-blur-lg rounded-t-md shadow bg-glass/40">
-  <h2 class="text-subtitle font-barlow mb-10">Gallery</h2>
+  id="gallery-container"
+  class="z-20 relative py-10 backdrop-blur-lg rounded-tr-md shadow bg-dark">
   <div class="sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5">
     {
-      resolvedImages.map((image) => (
-        <Image
-          src={image}
-          alt="test"
-          quality={25}
-          loading="lazy"
-          class="rounded-md mb-4"
-        />
-      ))
+      resolvedImages.map((image) => {
+        const mobile = image.width / 6;
+        const desktop = image.width / 8;
+
+        return (
+          <Image
+            src={image}
+            alt=""
+            quality="mid"
+            class="rounded-md mb-4"
+            widths={[mobile, desktop]}
+            sizes={`(max-width: 600px) ${mobile}px, ${desktop}px`}
+          />
+        );
+      })
     }
   </div>
 </section>

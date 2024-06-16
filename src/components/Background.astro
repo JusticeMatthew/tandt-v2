@@ -42,7 +42,12 @@ backgrounds.sort(() => Math.random() - 0.5);
 <>
   {
     backgrounds.map((background) => (
-      <Image src={background.src} alt={background.alt} class="background" />
+      <Image
+        src={background.src}
+        alt={background.alt}
+        class="background"
+        loading="eager"
+      />
     ))
   }
 </>
