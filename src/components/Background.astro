@@ -8,7 +8,44 @@ import {
   mountains,
   rocks,
 } from '@/assets/backgrounds';
+
+const backgrounds = [
+  {
+    src: flowers,
+    alt: 'a large bush covered in purple flowers',
+  },
+  {
+    src: deer,
+    alt: 'a close up photo of a deer',
+  },
+  {
+    src: sunset,
+    alt: 'a low sunset over the ocean',
+  },
+  {
+    src: bird,
+    alt: 'a green macaw cleaning itself',
+  },
+  {
+    src: mountains,
+    alt: 'a large mountain range beyond a sparse plain',
+  },
+  {
+    src: rocks,
+    alt: 'mineral or ice covered rocks',
+  },
+];
+
+backgrounds.sort(() => Math.random() - 0.5);
 ---
+
+<>
+  {
+    backgrounds.map((background) => (
+      <Image src={background.src} alt={background.alt} class="background" />
+    ))
+  }
+</>
 
 <style>
   .background {
@@ -62,16 +99,3 @@ import {
     }
   }
 </style>
-
-<>
-  <Image src={flowers} alt="purple flowers" class="background" />
-  <Image src={deer} alt="a deer head on" class="background" />
-  <Image src={sunset} alt="a low sunset over the ocean" class="background" />
-  <Image src={bird} alt="a green maccaw" class="background" />
-  <Image
-    src={mountains}
-    alt="mountains beyond an open plain with a few sparse trees"
-    class="background"
-  />
-  <Image src={rocks} alt="ice or salt covered rocks" class="background" />
-</>

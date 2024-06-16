@@ -2,11 +2,19 @@
 import MainLayout from '@/layouts/MainLayout.astro';
 import Background from '@/components/Background.astro';
 import Bread from '@/components/Bread.astro';
+import Gallery from '@/components/Gallery.astro';
 ---
 
 <MainLayout>
   <Background />
-  <div class="z-20 relative container min-h-screen">
+  <div
+    class="z-20 relative container min-h-screen flex flex-col justify-between">
     <Bread />
+    <a
+      href="#gallery"
+      class="bg-glass/40 backdrop-blur-lg rounded-t-md shadow text-subtitle font-barlow max-w-fit px-8 py-2">
+      View Gallery
+    </a>
   </div>
+  <Gallery />
 </MainLayout>

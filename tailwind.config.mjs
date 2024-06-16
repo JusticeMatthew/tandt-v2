@@ -20,7 +20,7 @@ export default {
       fontSize: {
         min: 'var(--step-00)',
         bread: 'var(--step-0)',
-        subtitle: 'var(--step-3)',
+        subtitle: 'var(--step-2)',
         title: 'var(--step-5)',
         headline: 'var(--step-6)',
       },
