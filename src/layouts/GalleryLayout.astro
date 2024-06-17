@@ -1,14 +1,12 @@
 ---
 import '@/styles/global.css';
 import { ViewTransitions } from 'astro:transitions';
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <html class="scroll-smooth motion-reduce:scroll-auto">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="/favicon.svg?v=2" />
-    <link rel="canonical" href={canonicalURL} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <title>T & T Photography</title>
