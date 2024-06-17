@@ -1,0 +1,46 @@
+---
+import GalleryLayout from '@/layouts/GalleryLayout.astro';
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const images = await getCollection('images');
+
+  return images.map((image) => {
+    return {
+      params: {
+        id: image.id,
+      },
+      props: { image },
+    };
+  });
+}
+
+const { id } = Astro.params;
+const {
+  image: { data },
+} = Astro.props;
+---
+
+<GalleryLayout>
+  <div
+    class="py-6 px-gallery z-20 absolute flex place-content-center h-screen w-screen rounded-md">
+    <Image
+      src={data.src as ImageMetadata}
+      alt={data.alt}
+      transition:name={`${id}`}
+      class="rounded-md shadow object-cover"
+    />
+  </div>
+  <div
+    class="w-screen h-screen absolute top-0 left-0 bg-glass/40 backdrop-blur-md z-10">
+  </div>
+  <div class="w-screen h-screen overflow-clip z-0">
+    <Image
+      src={data.src as ImageMetadata}
+      alt={data.alt}
+      class="object-cover w-full h-full"
+    />
+  </div>
+</GalleryLayout>

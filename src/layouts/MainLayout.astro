@@ -1,5 +1,6 @@
 ---
 import '@/styles/global.css';
+import { ViewTransitions } from 'astro:transitions';
 import { AstroFont } from 'astro-font';
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
@@ -12,6 +13,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <title>T & T Photography</title>
+    <ViewTransitions />
     <AstroFont
       config={[
         {
