@@ -21,14 +21,17 @@ resolvedImages.sort(() => Math.random() - 0.5);
         const desktop = image.width / 8;
 
         return (
-          <Image
-            src={image}
-            alt=""
-            quality="mid"
-            class="rounded-md mb-4"
-            widths={[mobile, desktop]}
-            sizes={`(max-width: 600px) ${mobile}px, ${desktop}px`}
-          />
+          <div
+            class={`max-w-[${mobile}] sm:max-w-[${desktop}] overflow-clip rounded-md`}>
+            <Image
+              src={image}
+              alt=""
+              quality="mid"
+              class="rounded-md mb-4 object-cover transition-transform duration-1000 ease-out hover:scale-110"
+              widths={[mobile, desktop]}
+              sizes={`(max-width: 600px) ${mobile}px, ${desktop}px`}
+            />
+          </div>
         );
       })
     }
