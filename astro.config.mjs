@@ -4,5 +4,5 @@ import lenis from "astro-lenis";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), lenis()],
+  integrations: [tailwind()],
 });

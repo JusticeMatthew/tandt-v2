@@ -10,6 +10,13 @@ export default {
   },
 	theme: {
 		extend: {
+      screens: {
+        '1440': '2560px'
+      },
+      padding: {
+        gallery: 'var(--space-gallery)',
+        'gallery-large': 'var(--space-gallery-large)'
+      },
       margin: {
         section: 'var(--space-section)',
       },
