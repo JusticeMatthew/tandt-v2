@@ -1,0 +1,6 @@
+export {default as flowers } from './backgrounds/1.webp'
+export {default as deer } from './backgrounds/2.webp'
+export {default as sunset } from './backgrounds/3.webp'
+export {default as bird } from './backgrounds/4.webp'
+export {default as mountains } from './backgrounds/5.webp'
+export {default as rocks } from './backgrounds/6.webp'

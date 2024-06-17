@@ -5,7 +5,8 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: 'https://tandt-v2.vercel.app/',
   redirects: {
-    '/gallery': '/#gallery'
+    '/gallery': '/#gallery',
+    '/gallery/000' : '/#gallery'
   },
   prefetch: true,
   integrations: [tailwind()],

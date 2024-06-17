@@ -21,16 +21,25 @@ const { id } = Astro.params;
 const {
   image: { data },
 } = Astro.props;
+
+const prev = (parseInt(id) - 1).toString().padStart(3, '0');
+const next = (parseInt(id) + 1).toString().padStart(3, '0');
 ---
 
 <GalleryLayout>
   <div
-    class="py-6 px-gallery z-20 absolute flex place-content-center h-screen w-screen rounded-md">
+    class="py-6 px-gallery z-20 absolute flex place-content-center h-screen w-screen rounded-md overflow-clip">
+    <div class="absolute z-30">
+      <a href=`/gallery/${prev}`>Prev</a>
+      <a href=`/gallery/${next}`>Next</a>
+    </div>
     <Image
       src={data.src as ImageMetadata}
       alt={data.alt}
       loading="eager"
-      transition:name={`${id}`}
+      quality="mid"
+      width={data.src.width / 1.5}
+      transition:name={id}
       class="rounded-md shadow object-cover"
     />
   </div>
@@ -38,7 +47,7 @@ const {
   <div
     class="w-screen h-screen absolute top-0 left-0 bg-glass/40 backdrop-blur-md z-10">
   </div>
-  <div class="w-screen h-screen overflow-clip z-0">
+  <div class="w-screen h-screen overflow-clip z-0 bg-dark">
     <Image
       src={data.src as ImageMetadata}
       alt={data.alt}
