@@ -7,5 +7,6 @@ export default defineConfig({
   redirects: {
     '/gallery': '/#gallery'
   },
+  prefetch: true,
   integrations: [tailwind()],
 });
