@@ -29,6 +29,7 @@ const {
     <Image
       src={data.src as ImageMetadata}
       alt={data.alt}
+      loading="eager"
       transition:name={`${id}`}
       class="rounded-md shadow object-cover"
     />
@@ -42,6 +43,8 @@ const {
       src={data.src as ImageMetadata}
       alt={data.alt}
       quality="low"
+      loading="eager"
+      width={data.src.width / 6}
       class="object-cover w-full h-full"
     />
   </div>
