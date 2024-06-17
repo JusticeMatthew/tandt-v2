@@ -4,8 +4,6 @@ import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 
 const images = await getCollection('images');
-
-images.sort(() => Math.random() - 0.5);
 ---
 
 <section
