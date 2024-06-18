@@ -9,7 +9,8 @@ const images = await getCollection('images');
 <section
   id="gallery"
   class="px-gallery 1440:px-gallery-large z-20 relative py-10 backdrop-blur-lg rounded-tr-md shadow bg-dark">
-  <div class="sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5">
+  <div
+    class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
     {
       images.map(({ data, id }) => {
         const mobile = data.src.width / 6;
@@ -24,7 +25,7 @@ const images = await getCollection('images');
                 alt={data.alt}
                 quality="mid"
                 transition:name={id}
-                class="rounded-md mb-4 object-cover transition-transform duration-1000 ease-out hover:scale-105"
+                class="rounded-md object-cover transition-transform duration-1000 ease-out hover:scale-105"
                 widths={[mobile, desktop]}
                 sizes={`(max-width: 600px) ${mobile}px, ${desktop}px`}
               />

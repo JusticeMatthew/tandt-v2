@@ -1,6 +1,7 @@
 ---
 import '@/styles/global.css';
 import { ViewTransitions } from 'astro:transitions';
+import NoScroll from 'astro-vtbot/components/NoScroll.astro';
 import { AstroFont } from 'astro-font';
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
@@ -14,6 +15,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="generator" content={Astro.generator} />
     <title>T & T Photography</title>
     <ViewTransitions />
+    <NoScroll />
     <AstroFont
       config={[
         {

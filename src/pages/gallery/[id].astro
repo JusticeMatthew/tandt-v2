@@ -24,23 +24,46 @@ const {
 
 const prev = (parseInt(id) - 1).toString().padStart(3, '0');
 const next = (parseInt(id) + 1).toString().padStart(3, '0');
+
+const link =
+  'bg-dark text-light py-3 px-7 flex items-center justify-center hover:bg-mid';
+
+const featureWidth = data.src.width / 1.5;
 ---
 
 <GalleryLayout>
   <div
     class="py-6 px-gallery z-20 absolute flex place-content-center h-screen w-screen rounded-md overflow-clip">
-    <div class="absolute z-30">
-      <a href=`/gallery/${prev}`>Prev</a>
-      <a href=`/gallery/${next}`>Next</a>
+    <div
+      class="absolute z-30 flex container w-full rounded-b-md"
+      transition:name="galleryNav">
+      <a
+        href=`/#gallery`
+        class:list={[link, 'rounded-b-md max-container:rounded-tl-md mr-6']}
+        data-astro-prefech>
+        Home
+      </a>
+      <a
+        href=`/gallery/${prev}`
+        class:list={[link, 'rounded-bl-md']}
+        data-astro-prefech>
+        Prev
+      </a>
+      <a
+        href=`/gallery/${next}`
+        class:list={[link, 'rounded-br-md']}
+        data-astro-prefech>
+        Next
+      </a>
     </div>
     <Image
       src={data.src as ImageMetadata}
       alt={data.alt}
       loading="eager"
       quality="mid"
-      width={data.src.width / 1.5}
+      width={featureWidth}
       transition:name={id}
-      class="rounded-md shadow object-cover"
+      class="rounded-md shadow object-cover w-full"
     />
   </div>
   <!-- Background elements -->

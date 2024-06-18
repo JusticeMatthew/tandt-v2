@@ -11,7 +11,8 @@ export default {
 	theme: {
 		extend: {
       screens: {
-        '1440': '2560px'
+        '1440': '2560px',
+        'container': '1474px'
       },
       padding: {
         gallery: 'var(--space-gallery)',
@@ -33,7 +34,8 @@ export default {
       },
       colors: {
         light: '#F8FAFC',
-        dark: '#0D111C',
+        dark: '#131313',
+        mid: '#222222',
         glass: '#E3EFFF',
       },
     },
