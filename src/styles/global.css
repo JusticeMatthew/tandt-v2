@@ -77,3 +77,7 @@ label {
 .pretty {
   text-wrap: pretty;
 }
+
+  ::view-transition-group(galleryNav) {
+    z-index: 40 !important;
+  }
