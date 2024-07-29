@@ -19,7 +19,7 @@ const images = await getCollection('images');
         return (
           <div
             class={`max-w-[${mobile}] sm:max-w-[${desktop}] overflow-clip rounded-md`}>
-            <a href={`/gallery/${id}`} data-astro-prefech>
+            <a href={`/gallery/${id}`} data-astro-prefetch>
               <Image
                 src={data.src as ImageMetadata}
                 alt={data.alt}
